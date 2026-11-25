@@ -124,7 +124,9 @@ export function Layout() {
   const navigate = useNavigate();
 
   useEffect(() => setOpen(false), [location.pathname]);
-  useEffect(() => window.scrollTo(0, 0), [location.pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
